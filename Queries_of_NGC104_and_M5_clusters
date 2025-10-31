@@ -1,3 +1,7 @@
+Here we show the queries (via cone search in Gaia) used to obtain the stars we want to study. 
+We made sure to use a bigger angular size than the one of the clusters to also retrieve field stars and 
+be able to show a valuable cleaning and selecting process of stars in the clusters.
+
 Query NGC104:
 <INFO name="QUERY" value="SELECT 
     dr3.source_id,
