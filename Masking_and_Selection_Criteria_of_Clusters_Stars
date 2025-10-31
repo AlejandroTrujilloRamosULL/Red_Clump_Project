@@ -1,7 +1,7 @@
 Masking and selection criteria of cluster stars:
 -----------------------------------------------
 
-# 1. Astrometric excess noise — excludes stars with unreliable astrometric data
+**# 1. Astrometric excess noise — excludes stars with unreliable astrometric data**
 
 mask_astrometric_excess_noise = (astrometric_excess_noise < 1)
 
