@@ -8,13 +8,12 @@ Masking and selection criteria of cluster stars:
 
 mask_astrometric_excess_noise = (astrometric_excess_noise < 1)
 
-# 2. RUWE (Renormalized Unit Weight Error) — chi_squared based statistic fit which 
-filters out sources with bad astrometric data
+# 2. RUWE (Renormalized Unit Weight Error) — chi_squared based statistic fit which filters out sources with bad astrometric data
 
 mask_ruwe = (ruwe < 1.8)
 
-# 3. Parallax range — considered from a distribution study of parallax,
-considered values within ±1σ of the median parallax
+# 3. Parallax range — selected from a distribution study of parallax.
+Considered values are within ±1σ of the median parallax.
 
 mask_parallax_range = 
     (parallax > median_parallax - 1*std_parallax) &
@@ -24,15 +23,15 @@ mask_parallax_range =
 
 mask_phot_bp_rp = (phot_bp_rp_excess_factor < 1.3)
 
-# 5. Proper motion range —considered from a distribution study of proper motion, 
-considered values within ±1σ of the median proper motion
+# 5. Proper motion range — selected from a distribution study of proper motion. 
+Considered values are within ±1σ of the median proper motion.
 
 mask_pm_range_2 = 
     (pm > median_pm - 1*std_pm) &
     (pm < median_pm + 1*std_pm)
 
 
-# 6. Parallax_over_error — ensures reliable distance estimates,
-indicator of the Signal to Noise ratio (S/N) of distance measurements
+# 6. Parallax_over_error — ensures reliable distance estimates defined as the value of parallax over its standard deviation.
+It is an indicator of the Signal to Noise ratio (S/N) of distance measurements.
 
 mask_parallax_over_error = (parallax_over_error > 4)
