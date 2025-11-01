@@ -10,7 +10,7 @@ mask_astrometric_excess_noise = (astrometric_excess_noise < 1)
 
 # 2. RUWE (Renormalized Unit Weight Error) — chi_squared based statistic fit which filters out sources with bad astrometric data
 
-mask_ruwe = (ruwe < 1.8)
+mask_ruwe = (ruwe < 1.4)
 
 # 3. Parallax range — selected from a distribution study of parallax.
 Considered values are within ±1σ of the median parallax.
