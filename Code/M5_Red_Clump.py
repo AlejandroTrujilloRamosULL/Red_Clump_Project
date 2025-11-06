@@ -120,7 +120,6 @@ gaia_data_no_filter = gaia_data_no_filter[:, mask_no_filter==False]
 abs_mag = gaia_data_ultimate[1] - 5*(np.log10(distance_pc/10))
 abs_mag_no_filter = gaia_data_no_filter[1] - 5*(np.log10(((1000/gaia_data_no_filter[2]))/10))
 
-
 "CMD region masking for differentiating the different type of stars in the Horizontal Branch"
 
 # We define a Horizontal Branch limiting range and define the red clump mask 
@@ -136,7 +135,6 @@ rr_median_color = np.nanmedian(color_rrlyrae)
 # Maskng for BHB and RC group of stars
 blue_hb_mask = hb_mask & (color_filt < rr_median_color)
 red_clump_mask = red_clump_hb_mask & (color_filt > rr_median_color) & (color_filt < 0.98)
-
 
 "Calculation of the distance modulus of the Cluster"
 
@@ -234,7 +232,7 @@ gaia_data_ultimate_hb = gaia_data_ultimate[:, mask_hb_mag==True]
 hb_color = gaia_data_ultimate_hb[0]
 sorted_color = np.sort(color_filt)
 
-# Defining bw so KDe becomes smooth
+# Defining bw so KDE becomes smooth
 def kde_with_bw_adjust(data, bw_adjust=1.0):
     data = np.asarray(data)
     kde = gaussian_kde(data)
@@ -332,3 +330,4 @@ plt.xlim(0, 20)
 plt.ylim(0.1)
 plt.legend(loc="best", prop={"size":16})
 plt.show()
+
