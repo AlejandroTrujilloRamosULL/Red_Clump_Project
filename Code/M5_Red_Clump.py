@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Nov  6 11:27:50 2025
-
 @author: aleja
 """
 
@@ -329,5 +327,6 @@ plt.xlim(0, 20)
 plt.ylim(0.1)
 plt.legend(loc="best", prop={"size":16})
 plt.show()
+
 
 
