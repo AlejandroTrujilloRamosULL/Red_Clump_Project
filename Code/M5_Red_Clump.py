@@ -5,8 +5,7 @@ Created on Thu Nov  6 11:27:50 2025
 @author: aleja
 """
 
-"Example Code of the Selection Criteria and Distance Modulus Calculation of one"
-"of the clusters under study, in this case M5"
+"Example Code of the Selection Criteria and Distance Modulus Calculation of one of the clusters under study, in this case M5"
 
 # Import libraries
 import numpy as np
@@ -330,4 +329,5 @@ plt.xlim(0, 20)
 plt.ylim(0.1)
 plt.legend(loc="best", prop={"size":16})
 plt.show()
+
 
