@@ -84,14 +84,14 @@ mask_parallax_error_range = (parallax_over_error > 4)
 total_mask = mask_ruwe_range & mask_parallax_range & mask_phot_bp_rp & mask_parallax_error_range & mask_pm_range_2 & ~mask_nan
 gaia_data_ultimate = gaia_data_ult[:, total_mask==True]
 
-# Masking and selecting color, magnitude and parallax for cluster stars and 
+# Masking and selecting color, magnitude and parallax for cluster stars 
 color_filt  = color[total_mask]
 g_mag_filt  = g_mag[total_mask]
 parallax_filt = parallax[total_mask]
 
 # Distance and absolute magnitudes for filtered sample of cluster stars
 distance_pc = 1000/parallax_filt # [pc]
-abs_mag_filt = g_mag_filt - 5 * np.log10(distance_pc / 10)
+abs_mag_filt = g_mag_filt - 5*np.log10(distance_pc / 10)
 
 # Masking for RR Lyrae stars
 variable_flag_filt = variable_flag[total_mask]
@@ -104,8 +104,9 @@ gaia_data_teff_logg = np.vstack((teff, logg))
 total_mask_teff_logg = mask_teff | mask_logg
 gaia_data_teff_logg = gaia_data_teff_logg[:, total_mask_teff_logg==False]
 
-# Calculate distance in parsecs from parallax for selected cluster stars
+# Calculate distance in parsecs from parallax for selected cluster stars and its mean
 distance_pc = 1000/gaia_data_ultimate[3] # [pc]
+mean_distance_pc = np.mean(distance_pc)
 
 # Stacking the color, magnitude and parallax for all the stars 
 # (non-filtered case)
@@ -327,6 +328,7 @@ plt.xlim(0, 20)
 plt.ylim(0.1)
 plt.legend(loc="best", prop={"size":16})
 plt.show()
+
 
 
 
